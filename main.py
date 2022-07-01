@@ -29,7 +29,7 @@ def main(argv: List[str]):
         lines = fp.readlines()
         deltas = [map_to_timedelta(line) for line in lines]
         total_time = sum([d for d in deltas if d is not None], start=timedelta())
-        print(total_time)
+        print(f"Worked so far: {total_time} ({round(total_time.total_seconds()/60/60, 2)}h)")
 
 if __name__ == "__main__":
     main(sys.argv)
